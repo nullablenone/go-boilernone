@@ -1,17 +1,21 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/nullablenone/go-boilernone/config"
+	"github.com/nullablenone/go-boilernone/routes"
 )
 
 func main() {
-	env, err := config.NewEnv()
+	_, err := config.NewEnv()
 	if err != nil {
 		log.Fatal("failed to load .env file")
 	}
 
-	fmt.Println(env.Username)
+	router := routes.SetRoutes()
+	if err := router.Run(":3333"); err != nil {
+		log.Fatalf("failed to start HTTP server on :3333: %v", err)
+	}
+
 }
