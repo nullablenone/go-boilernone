@@ -8,13 +8,13 @@ import (
 )
 
 func main() {
-	_, err := config.NewEnv()
+	_, err := config.ConnectPostgre()
 	if err != nil {
-		log.Fatal("failed to load .env file")
+		log.Fatal(err)
 	}
 
 	router := routes.SetRoutes()
-	if err := router.Run(":3333"); err != nil {
+	if err = router.Run(":3333"); err != nil {
 		log.Fatalf("failed to start HTTP server on :3333: %v", err)
 	}
 

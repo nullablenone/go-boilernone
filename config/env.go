@@ -7,7 +7,12 @@ import (
 )
 
 type Env struct {
-	Username string
+	DBHost    string
+	DBUser    string
+	DBPass    string
+	DBName    string
+	DBPort    string
+	DBSSLMode string
 }
 
 func NewEnv() (*Env, error) {
@@ -16,7 +21,12 @@ func NewEnv() (*Env, error) {
 	}
 
 	env := Env{
-		Username: os.Getenv("username"),
+		DBHost:    os.Getenv("DB_HOST"),
+		DBUser:    os.Getenv("DB_USER"),
+		DBPass:    os.Getenv("DB_PASS"),
+		DBName:    os.Getenv("DB_NAME"),
+		DBPort:    os.Getenv("DB_PORT"),
+		DBSSLMode: os.Getenv("DB_SSLMODE"),
 	}
 
 	return &env, nil
