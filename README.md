@@ -9,8 +9,8 @@ A simple Golang boilerplate using the Gin Web Framework and GORM (PostgreSQL).
     Bash
     
     ```
-   git clone [https://github.com/nullablenone/go-boilernone.git](https://github.com/nullablenone/go-boilernone.git) your-project-name
-   cd your-project-name
+    git clone https://github.com/nullablenone/go-boilernone.git your-project-name
+    cd your-project-name
     ```
 
 2. **Remove the existing Git history** so you can start fresh:
